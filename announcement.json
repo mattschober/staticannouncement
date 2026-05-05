@@ -1,0 +1,23 @@
+{
+  "active": true,
+  "delay_ms": 2000,
+  "text": "Matt Schober built this site with AI",
+  "image_url": "https://yoursite.com/matt.jpg",
+  "image_alt": "Matt Schober",
+  "style": {
+    "position": "fixed",
+    "bottom": "20px",
+    "right": "20px",
+    "background": "white",
+    "border": "1px solid #ddd",
+    "borderRadius": "12px",
+    "padding": "12px 16px",
+    "display": "flex",
+    "alignItems": "center",
+    "gap": "10px",
+    "boxShadow": "0 4px 12px rgba(0,0,0,0.15)",
+    "fontFamily": "sans-serif",
+    "fontSize": "14px",
+    "zIndex": "9999"
+  }
+}
