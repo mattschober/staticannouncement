@@ -16,6 +16,7 @@
   /* ---- SETTINGS — edit here only ---- */
   const CONFIG = {
     videoURL:    "https://www.youtube.com/embed/J8WnYjHqaBs?autoplay=1",
+    profileImage: "https://cdn.jsdelivr.net/gh/mattschober/staticannouncement@main/mattschober-prof.jpeg",
     delayMS:     1000,
     showOnce:    true,
     heading:     "Welcome! 👋",
@@ -54,7 +55,7 @@
       position: relative;
       width: 100%;
       max-width: 800px;
-      background: #ffffff;
+      background: #0f2044;
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 40px 100px rgba(0,0,0,0.5);
@@ -66,30 +67,44 @@
     }
     #sa-header {
       padding: 20px 24px 16px;
-      background: #fff;
+      background: #0f2044;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 12px;
+    }
+    #sa-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    #sa-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid #1e3a6e;
     }
     #sa-header-text h2 {
       margin: 0 0 4px;
       font-size: 1.2rem;
       font-weight: 700;
-      color: #111;
+      color: #ffffff;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     #sa-header-text p {
       margin: 0;
       font-size: 0.9rem;
-      color: #555;
+      color: #93b4d9;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     }
     #sa-close {
       flex-shrink: 0;
-      background: #f3f4f6;
+      background: #1e3a6e;
       border: none;
-      color: #444;
+      color: #93b4d9;
       font-size: 18px;
       width: 34px;
       height: 34px;
@@ -101,7 +116,7 @@
       transition: background 0.2s, color 0.2s;
       margin-top: 2px;
     }
-    #sa-close:hover { background: #e5e7eb; color: #111; }
+    #sa-close:hover { background: #2a4f8f; color: #ffffff; }
     #sa-video-wrap {
       position: relative;
       padding-bottom: 56.25%;
@@ -116,8 +131,8 @@
     }
     #sa-footer {
       padding: 16px 24px;
-      background: #f9fafb;
-      border-top: 1px solid #e5e7eb;
+      background: #0a1a38;
+      border-top: 1px solid #1e3a6e;
     }
     #sa-buttons {
       display: flex;
@@ -220,13 +235,13 @@
       background: none;
       border: none;
       font-size: 0.82rem;
-      color: #aaa;
+      color: #5a7fa8;
       cursor: pointer;
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       text-decoration: underline;
       padding: 0;
     }
-    #sa-skip:hover { color: #555; }
+    #sa-skip:hover { color: #93b4d9; }
     @media (max-width: 480px) {
       #sa-header { padding: 14px 16px 12px; }
       #sa-footer { padding: 14px 16px; }
@@ -251,9 +266,12 @@
   overlay.innerHTML = `
     <div id="sa-modal">
       <div id="sa-header">
-        <div id="sa-header-text">
-          <h2>${CONFIG.heading}</h2>
-          <p>${CONFIG.subtext}</p>
+        <div id="sa-header-left">
+          ${CONFIG.profileImage ? `<img id="sa-avatar" src="${CONFIG.profileImage}" alt="Profile photo">` : ""}
+          <div id="sa-header-text">
+            <h2>${CONFIG.heading}</h2>
+            <p>${CONFIG.subtext}</p>
+          </div>
         </div>
         <button id="sa-close" aria-label="Close">&#x2715;</button>
       </div>
