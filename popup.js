@@ -16,6 +16,7 @@
   /* ---- SETTINGS — edit here only ---- */
   const CONFIG = {
     videoURL:    "https://www.youtube.com/embed/J8WnYjHqaBs?autoplay=1",
+    profileImage: "https://cdn.jsdelivr.net/gh/mattschober/staticannouncement@main/mattschober-prof.jpeg",
     delayMS:     1000,
     showOnce:    true,
     heading:     "Welcome! 👋",
@@ -68,9 +69,23 @@
       padding: 20px 24px 16px;
       background: #0f2044;
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 12px;
+    }
+    #sa-header-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    #sa-avatar {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 2px solid #1e3a6e;
     }
     #sa-header-text h2 {
       margin: 0 0 4px;
@@ -251,9 +266,12 @@
   overlay.innerHTML = `
     <div id="sa-modal">
       <div id="sa-header">
-        <div id="sa-header-text">
-          <h2>${CONFIG.heading}</h2>
-          <p>${CONFIG.subtext}</p>
+        <div id="sa-header-left">
+          ${CONFIG.profileImage ? `<img id="sa-avatar" src="${CONFIG.profileImage}" alt="Profile photo">` : ""}
+          <div id="sa-header-text">
+            <h2>${CONFIG.heading}</h2>
+            <p>${CONFIG.subtext}</p>
+          </div>
         </div>
         <button id="sa-close" aria-label="Close">&#x2715;</button>
       </div>
