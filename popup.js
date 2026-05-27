@@ -24,10 +24,28 @@
     visitURL:    "https://mattschober-cloudpm.com",
     emailAddress: "matt.schober@live.com",
 
-    // Add your websites here when ready:
-    // { label: "Site Name", url: "https://example.com" }
     otherSites: [
-      // { label: "Example Site", url: "https://example.com" },
+      { label: "Matt Schober",                  url: "https://matt-schober.com" },
+      { label: "Migrating with Matt",           url: "https://migratingwithmatt.com" },
+      { label: "Nextbites",                     url: "https://nextbites.ai" },
+      { label: "Mortar Property Management",    url: "https://mortarpropertymanagement.com" },
+      { label: "Healaguard",                    url: "https://healaguard.com" },
+      { label: "Smoke City Richfield",          url: "https://smokecityrichfield.com" },
+      { label: "Minot Yard Games",              url: "https://minotyardgames.com" },
+      { label: "Barkside Bungalow MN",          url: "https://barksidebungalowmn.com" },
+      { label: "Highland Park Rental MN",       url: "https://highlandparkrentalmn.com" },
+      { label: "Smart Property Holdings LLC",   url: "https://smartpropertyholdingsllc.com" },
+      { label: "Matt Schober Saint Paul",       url: "https://mattschobersaintpaul.com" },
+      { label: "Former Instagram Models",       url: "https://formerinstagrammodels.com" },
+      { label: "Matt Maya Saint Paul",          url: "https://mattmayasaintpaul.com" },
+      { label: "Schober Theater",               url: "https://schobertheater.com" },
+      { label: "Matt Schober Podcast",          url: "https://mattschoberpodcast.com" },
+      { label: "Schober Investing",             url: "https://schoberinvesting.com" },
+      { label: "Tator Tot Rental MN",           url: "https://tatortotrentalmn.com" },
+      { label: "Barkside Cafe",                 url: "https://barksidecafe.com" },
+      { label: "I Am the Needle",               url: "https://iamtheneedle.com" },
+      { label: "Porch Light Twin Cities",       url: "https://porchlighttwincities.com" },
+      { label: "Porch Light Services",          url: "https://porchlightservices.com" },
     ],
   };
   /* ---- END SETTINGS ---- */
@@ -210,7 +228,8 @@
     }
     #sa-dropdown.open { display: block; animation: sa-fadeIn 0.2s ease; }
     #sa-dropdown a {
-      display: block;
+      display: flex;
+      flex-direction: column;
       padding: 11px 18px;
       font-size: 0.9rem;
       color: #111;
@@ -221,6 +240,15 @@
     }
     #sa-dropdown a:last-child { border-bottom: none; }
     #sa-dropdown a:hover { background: #f0f4ff; color: #2563eb; }
+    #sa-dropdown a:hover .sa-site-url { color: #2563eb; }
+    #sa-dropdown .sa-site-label { font-weight: 600; }
+    #sa-dropdown .sa-site-url {
+      font-size: 0.78rem;
+      color: #6b7280;
+      margin-top: 1px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
     #sa-dropdown .sa-empty {
       padding: 14px 18px;
       font-size: 0.88rem;
@@ -257,7 +285,7 @@
     dropdownInner = `<div class="sa-empty">More sites coming soon...</div>`;
   } else {
     CONFIG.otherSites.forEach(site => {
-      dropdownInner += `<a href="${site.url}" target="_blank" rel="noopener">${site.label}</a>`;
+      dropdownInner += `<a href="${site.url}" target="_blank" rel="noopener"><span class="sa-site-label">${site.label}</span><span class="sa-site-url">${site.url}</span></a>`;
     });
   }
 
