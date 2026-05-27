@@ -228,7 +228,8 @@
     }
     #sa-dropdown.open { display: block; animation: sa-fadeIn 0.2s ease; }
     #sa-dropdown a {
-      display: block;
+      display: flex;
+      flex-direction: column;
       padding: 11px 18px;
       font-size: 0.9rem;
       color: #111;
@@ -239,6 +240,15 @@
     }
     #sa-dropdown a:last-child { border-bottom: none; }
     #sa-dropdown a:hover { background: #f0f4ff; color: #2563eb; }
+    #sa-dropdown a:hover .sa-site-url { color: #2563eb; }
+    #sa-dropdown .sa-site-label { font-weight: 600; }
+    #sa-dropdown .sa-site-url {
+      font-size: 0.78rem;
+      color: #6b7280;
+      margin-top: 1px;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
     #sa-dropdown .sa-empty {
       padding: 14px 18px;
       font-size: 0.88rem;
@@ -275,7 +285,7 @@
     dropdownInner = `<div class="sa-empty">More sites coming soon...</div>`;
   } else {
     CONFIG.otherSites.forEach(site => {
-      dropdownInner += `<a href="${site.url}" target="_blank" rel="noopener">${site.label}</a>`;
+      dropdownInner += `<a href="${site.url}" target="_blank" rel="noopener"><span class="sa-site-label">${site.label}</span><span class="sa-site-url">${site.url}</span></a>`;
     });
   }
 
