@@ -24,10 +24,28 @@
     visitURL:    "https://mattschober-cloudpm.com",
     emailAddress: "matt.schober@live.com",
 
-    // Add your websites here when ready:
-    // { label: "Site Name", url: "https://example.com" }
     otherSites: [
-      // { label: "Example Site", url: "https://example.com" },
+      { label: "Matt Schober",                  url: "https://matt-schober.com" },
+      { label: "Migrating with Matt",           url: "https://migratingwithmatt.com" },
+      { label: "Nextbites",                     url: "https://nextbites.ai" },
+      { label: "Mortar Property Management",    url: "https://mortarpropertymanagement.com" },
+      { label: "Healaguard",                    url: "https://healaguard.com" },
+      { label: "Smoke City Richfield",          url: "https://smokecityrichfield.com" },
+      { label: "Minot Yard Games",              url: "https://minotyardgames.com" },
+      { label: "Barkside Bungalow MN",          url: "https://barksidebungalowmn.com" },
+      { label: "Highland Park Rental MN",       url: "https://highlandparkrentalmn.com" },
+      { label: "Smart Property Holdings LLC",   url: "https://smartpropertyholdingsllc.com" },
+      { label: "Matt Schober Saint Paul",       url: "https://mattschobersaintpaul.com" },
+      { label: "Former Instagram Models",       url: "https://formerinstagrammodels.com" },
+      { label: "Matt Maya Saint Paul",          url: "https://mattmayasaintpaul.com" },
+      { label: "Schober Theater",               url: "https://schobertheater.com" },
+      { label: "Matt Schober Podcast",          url: "https://mattschoberpodcast.com" },
+      { label: "Schober Investing",             url: "https://schoberinvesting.com" },
+      { label: "Tator Tot Rental MN",           url: "https://tatortotrentalmn.com" },
+      { label: "Barkside Cafe",                 url: "https://barksidecafe.com" },
+      { label: "I Am the Needle",               url: "https://iamtheneedle.com" },
+      { label: "Porch Light Twin Cities",       url: "https://porchlighttwincities.com" },
+      { label: "Porch Light Services",          url: "https://porchlightservices.com" },
     ],
   };
   /* ---- END SETTINGS ---- */
