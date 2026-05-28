@@ -271,10 +271,27 @@
     }
     #sa-skip:hover { color: #93b4d9; }
     @media (max-width: 480px) {
+      #sa-overlay {
+        align-items: flex-start;
+        overflow-y: auto;
+        padding: 12px;
+      }
       #sa-header { padding: 14px 16px 12px; }
       #sa-footer { padding: 14px 16px; }
       #sa-buttons { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-      #sa-visit-btn, #sa-other-btn { flex: 1; justify-content: center; min-width: 140px; }
+      #sa-visit-btn, #sa-other-btn { flex: 1; justify-content: center; min-width: 120px; }
+      #sa-dropdown {
+        max-height: 200px;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      #sa-dropdown a { padding: 10px 14px; min-height: 44px; }
+      #sa-dropdown .sa-site-url {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
     }
   `;
   document.head.appendChild(style);
