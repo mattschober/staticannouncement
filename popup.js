@@ -15,7 +15,7 @@
 
   /* ---- SETTINGS — edit here only ---- */
   const CONFIG = {
-    videoURL:    "https://www.youtube.com/embed/J8WnYjHqaBs?autoplay=1&mute=1",
+    videoURL:    "https://www.youtube.com/embed/J8WnYjHqaBs?autoplay=1&mute=1&end=202",
     profileImage: "https://cdn.jsdelivr.net/gh/mattschober/staticannouncement@main/mattschober-prof.jpeg",
     delayMS:     1000,
     showOnce:    true,
