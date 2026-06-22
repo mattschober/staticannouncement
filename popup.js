@@ -135,17 +135,54 @@
       margin-top: 2px;
     }
     #sa-close:hover { background: #2a4f8f; color: #ffffff; }
-    #sa-video-wrap {
+    #sa-flag {
       position: relative;
       padding-bottom: 56.25%;
       height: 0;
-      background: #000;
+      overflow: hidden;
+      background: repeating-linear-gradient(
+        to bottom,
+        #B22234 0%,    #B22234 7.6923%,
+        #FFFFFF 7.6923%, #FFFFFF 15.3846%,
+        #B22234 15.3846%, #B22234 23.0769%,
+        #FFFFFF 23.0769%, #FFFFFF 30.7692%,
+        #B22234 30.7692%, #B22234 38.4615%,
+        #FFFFFF 38.4615%, #FFFFFF 46.1538%,
+        #B22234 46.1538%, #B22234 53.8461%,
+        #FFFFFF 53.8461%, #FFFFFF 61.5384%,
+        #B22234 61.5384%, #B22234 69.2307%,
+        #FFFFFF 69.2307%, #FFFFFF 76.923%,
+        #B22234 76.923%, #B22234 84.6153%,
+        #FFFFFF 84.6153%, #FFFFFF 92.3076%,
+        #B22234 92.3076%, #B22234 100%
+      );
     }
-    #sa-video-wrap iframe {
+    #sa-flag-canton {
       position: absolute;
       top: 0; left: 0;
-      width: 100%; height: 100%;
-      border: none;
+      width: 40%;
+      height: 53.85%;
+      background: #3C3B6E;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #sa-flag-stars {
+      display: grid;
+      grid-template-columns: repeat(11, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      width: 90%;
+      height: 85%;
+      gap: 0;
+    }
+    .sa-star {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-size: clamp(4px, 1.2vw, 14px);
+      line-height: 1;
+      font-style: normal;
     }
     #sa-footer {
       padding: 16px 24px;
@@ -320,12 +357,22 @@
         </div>
         <button id="sa-close" aria-label="Close">&#x2715;</button>
       </div>
-      <div id="sa-video-wrap">
-        <iframe
-          src="${CONFIG.videoURL}"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <div id="sa-flag">
+        <div id="sa-flag-canton">
+          <div id="sa-flag-stars">${(function(){
+            /* 50 stars: 5 rows of 6 + 4 rows of 5, offset in a 11-col grid */
+            let html = '';
+            for (let row = 0; row < 9; row++) {
+              for (let col = 0; col < 11; col++) {
+                const oddRow = row % 2 === 0;
+                const oddCol = col % 2 === 0;
+                const showStar = oddRow ? oddCol : !oddCol;
+                html += showStar ? '<span class="sa-star">★</span>' : '<span class="sa-star"></span>';
+              }
+            }
+            return html;
+          })()}</div>
+        </div>
       </div>
       <div id="sa-footer">
         <div id="sa-buttons">
