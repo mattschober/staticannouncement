@@ -23,30 +23,6 @@
     subtext:     "Watch this quick intro before you dive in.",
     visitURL:    "https://mattschober-cloudpm.com",
     emailAddress: "matt.schober@live.com",
-
-    otherSites: [
-      { label: "Matt Schober",                  url: "https://matt-schober.com" },
-      { label: "Migrating with Matt",           url: "https://migratingwithmatt.com" },
-      { label: "Nextbites",                     url: "https://nextbites.ai" },
-      { label: "Mortar Property Management",    url: "https://mortarpropertymanagement.com" },
-      { label: "Healaguard",                    url: "https://healaguard.com" },
-      { label: "Smoke City Richfield",          url: "https://smokecityrichfield.com" },
-      { label: "Minot Yard Games",              url: "https://minotyardgames.com" },
-      { label: "Barkside Bungalow MN",          url: "https://barksidebungalowmn.com" },
-      { label: "Highland Park Rental MN",       url: "https://highlandparkrentalmn.com" },
-      { label: "Smart Property Holdings LLC",   url: "https://smartpropertyholdingsllc.com" },
-      { label: "Matt Schober Saint Paul",       url: "https://mattschobersaintpaul.com" },
-      { label: "Former Instagram Models",       url: "https://formerinstagrammodels.com" },
-      { label: "Matt Maya Saint Paul",          url: "https://mattmayasaintpaul.com" },
-      { label: "Schober Theater",               url: "https://schobertheater.com" },
-      { label: "Matt Schober Podcast",          url: "https://mattschoberpodcast.com" },
-      { label: "Schober Investing",             url: "https://schoberinvesting.com" },
-      { label: "Tator Tot Rental MN",           url: "https://tatortotrentalmn.com" },
-      { label: "Barkside Cafe",                 url: "https://barksidecafe.com" },
-      { label: "I Am the Needle",               url: "https://iamtheneedle.com" },
-      { label: "Porch Light Twin Cities",       url: "https://porchlighttwincities.com" },
-      { label: "Porch Light Services",          url: "https://porchlightservices.com" },
-    ],
   };
   /* ---- END SETTINGS ---- */
 
@@ -213,22 +189,6 @@
       transition: background 0.2s, transform 0.15s;
     }
     #sa-visit-btn:hover { background: #1d4ed8; transform: translateY(-1px); }
-    #sa-other-btn {
-      background: #fff;
-      color: #111;
-      border: 2px solid #d1d5db;
-      border-radius: 8px;
-      padding: 11px 22px;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      transition: border-color 0.2s, transform 0.15s;
-    }
-    #sa-other-btn:hover { border-color: #9ca3af; transform: translateY(-1px); }
     #sa-email-btn {
       background: #fff;
       color: #2563eb;
@@ -254,47 +214,6 @@
       width: 20px;
       height: 20px;
     }
-    #sa-dropdown {
-      display: none;
-      margin-top: 12px;
-      background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 10px;
-      overflow-y: auto;
-      max-height: 300px;
-      -webkit-overflow-scrolling: touch;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-    }
-    #sa-dropdown.open { display: block; animation: sa-fadeIn 0.2s ease; }
-    #sa-dropdown a {
-      display: flex;
-      flex-direction: column;
-      padding: 11px 18px;
-      font-size: 0.9rem;
-      color: #111;
-      text-decoration: none;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      border-bottom: 1px solid #f3f4f6;
-      transition: background 0.15s;
-    }
-    #sa-dropdown a:last-child { border-bottom: none; }
-    #sa-dropdown a:hover { background: #f0f4ff; color: #2563eb; }
-    #sa-dropdown a:hover .sa-site-url { color: #2563eb; }
-    #sa-dropdown .sa-site-label { font-weight: 600; }
-    #sa-dropdown .sa-site-url {
-      font-size: 0.78rem;
-      color: #6b7280;
-      margin-top: 1px;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-    #sa-dropdown .sa-empty {
-      padding: 14px 18px;
-      font-size: 0.88rem;
-      color: #aaa;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      font-style: italic;
-    }
     #sa-skip {
       display: block;
       text-align: center;
@@ -318,30 +237,10 @@
       #sa-header { padding: 14px 16px 12px; }
       #sa-footer { padding: 14px 16px; }
       #sa-buttons { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-      #sa-visit-btn, #sa-other-btn { flex: 1; justify-content: center; min-width: 120px; }
-      #sa-dropdown {
-        max-height: 200px;
-      }
-      #sa-dropdown a { padding: 10px 14px; min-height: 44px; }
-      #sa-dropdown .sa-site-url {
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        max-width: 100%;
-      }
+      #sa-visit-btn { flex: 1; justify-content: center; min-width: 120px; }
     }
   `;
   document.head.appendChild(style);
-
-  // Build dropdown links
-  let dropdownInner = "";
-  if (CONFIG.otherSites.length === 0) {
-    dropdownInner = `<div class="sa-empty">More sites coming soon...</div>`;
-  } else {
-    CONFIG.otherSites.forEach(site => {
-      dropdownInner += `<a href="${site.url}" target="_blank" rel="noopener"><span class="sa-site-label">${site.label}</span><span class="sa-site-url">${site.url}</span></a>`;
-    });
-  }
 
   const overlay = document.createElement("div");
   overlay.id = "sa-overlay";
@@ -379,9 +278,6 @@
           <a id="sa-visit-btn" href="${CONFIG.visitURL}" target="_blank" rel="noopener">
             🌐 Visit my Website
           </a>
-          <button id="sa-other-btn">
-            🗂 See my other websites ▾
-          </button>
           <a id="sa-email-btn" href="mailto:${CONFIG.emailAddress}" title="Email ${CONFIG.emailAddress}" aria-label="Send email">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2"/>
@@ -389,7 +285,6 @@
             </svg>
           </a>
         </div>
-        <div id="sa-dropdown">${dropdownInner}</div>
         <button id="sa-skip">Skip intro and go to site &rarr;</button>
       </div>
     </div>
@@ -405,13 +300,6 @@
   document.addEventListener("click", function (e) {
     if (e.target.id === "sa-close" || e.target.id === "sa-skip") closePopup();
     if (e.target.id === "sa-overlay") closePopup();
-    if (e.target.id === "sa-other-btn") {
-      const dropdown = document.getElementById("sa-dropdown");
-      dropdown.classList.toggle("open");
-      e.target.textContent = dropdown.classList.contains("open")
-        ? "🗂 See my other websites ▴"
-        : "🗂 See my other websites ▾";
-    }
   });
 
   document.addEventListener("keydown", function (e) {
